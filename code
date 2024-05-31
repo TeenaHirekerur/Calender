@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calender</title>
+    <style>
+        body{
+            background: #16222A;
+            background: linear-gradient(to left,navy);
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        .container{
+            width: 100;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .left{
+            padding: 29px 48px;
+            background-color: rgb(246, 214, 181);
+
+        }
+        .right{
+            padding: 28px;
+            background-color: white;
+        }
+        #date{
+            font-size: 70px;
+            text-align: center;
+        }
+        #day{
+            font-size: 30px;
+
+        }
+        #month{
+            font-size: 48px;
+        }
+        #year{
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="left">
+                <div id="date">Date</div>
+                <div id="day">Day</div>
+            </div>
+            <div class="right">
+                <div id="month">Month</div>
+                <div id="year">Year</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let dateNew = new Date()
+        let days=["Sunday","Monday", "Tuesday", "Wednesday", "Thursday","Friday","Saturday"]
+        let months=["JAN","FEB","MARCH","APRIL","MAY","JUNE","JULY","AUG","SEP","OCT","NOV","DEC"]
+        let date = document.querySelector('#date')
+        let day = document.querySelector('#day')
+        let month = document.querySelector('#month')
+        let year = document.querySelector('#year')
+        
+        date.innerHTML = dateNew.getDate()
+        day.innerHTML = days[dateNew.getDay()]
+        month.innerHTML = months[dateNew.getMonth()]
+        year.innerHTML = dateNew.getFullYear()
+
+
+        </script>
+    
+</body>
+</html>
